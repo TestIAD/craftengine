@@ -1,0 +1,20 @@
+
+package restful
+
+import (
+
+	"github.com/GMISWE/app/internal/service"
+	"github.com/GMISWE/app/internal/service/{{.Lower}}"
+)
+
+// {{.Capital}} {{.Lower}}. {{.Test.Name}}
+type {{.Capital}} struct {
+	{{.Lower}} {{.Lower}}.Service
+}
+
+// New{{.Capital}} creates {{.Lower}}.
+func New{{.Capital}}(services *service.Services) *{{.Capital}} {
+	return &{{.Capital}}{
+		{{.Lower}}: services.{{.Capital}}Service,
+	}
+}

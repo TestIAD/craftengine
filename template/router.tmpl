@@ -1,0 +1,20 @@
+package router
+
+import (
+	"github.com/gin-gonic/gin"
+
+	"github.com/GMISWE/app/api/restful"
+	"github.com/GMISWE/app/internal/service"
+)
+
+// {{.Lower}}router
+func newAdministratorRouter({{.Module}}Engine *gin.RouterGroup, services *service.Services) {
+	c := restful.New{{.Capital}}(services)
+
+	group := adminEngine.Group("/{{.Lower}}")
+	group.POST("", c.Create{{.Capital}})
+	group.PUT("/:id", c.Update{{.Capital}})
+	group.DELETE("/:id", c.Delete{{.Capital}})
+	group.GET("/:id", c.Get{{.Capital}})
+
+}

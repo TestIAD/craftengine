@@ -1,0 +1,34 @@
+package {{.Lower}}
+
+import (
+	"context"
+
+	"gorm.io/gorm"
+
+	"github.com/GMISWE/app/internal/models"
+	"github.com/GMISWE/app/pkg/misc/tailormade/resp"
+)
+
+type Service interface {
+	Create{{.Capital}}(ctx context.Context, req *Create{{.Capital}}Req) *resp.Error
+	List{{.Capital}}(ctx context.Context, req *List{{.Capital}}req) (*List{{.Capital}}Resp, *resp.Error)
+	Delete{{.Capital}}(ctx context.Context, req *Delete{{.Capital}}Req) *resp.Error
+	Update{{.Capital}}(ctx context.Context, req *Update{{.Capital}}Req) *resp.Error
+}
+
+// NewService new Service implementation.
+func NewService(
+	db *gorm.DB,
+	{{.Lower}}Repo models.{{.Capital}}Repo,
+) Service {
+	return &{{.Lower}}Service{
+		db:         db,
+		{{.Lower}}Repo: {{.Lower}}Repo,
+	}
+}
+
+// {{.Lower}}Service implementation of Service.
+type {{.Lower}}Service struct {
+	db         *gorm.DB
+	{{.Lower}}Repo models.{{.Capital}}Repo
+}

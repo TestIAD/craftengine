@@ -1,0 +1,27 @@
+package models
+
+import (
+
+	"gorm.io/gorm"
+)
+
+const (
+	//{{.Lower}}TableName .
+	{{.Lower}}TableName = "gmi_{{.Lower}}"
+)
+
+// {{.Capital}}  {{.Lower}}
+type {{.Capital}} struct {
+	Model
+}
+
+
+// {{.Capital}}Repo {{.Lower}} repo
+type {{.Capital}}Repo interface {
+	BaseInterface[{{.Capital}}]
+}
+
+// TableName .
+func (*{{.Capital}}) TableName() string {
+	return {{.Lower}}TableName
+}

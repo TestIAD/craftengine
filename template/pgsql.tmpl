@@ -1,0 +1,14 @@
+package pgsql
+
+import (
+	"github.com/GMISWE/app/internal/models"
+)
+
+type {{.Lower}}Repo struct {
+	BaseRepository[models.{{.Capital}}]
+}
+
+// New{{.Capital}}Repo creates a new instance of the {{.Capital}}Repo.
+func New{{.Capital}}Repo() models.{{.Capital}}Repo {
+	return &{{.Lower}}Repo{}
+}

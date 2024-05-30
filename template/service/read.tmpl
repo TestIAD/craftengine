@@ -1,0 +1,28 @@
+package {{.Lower}}
+
+import (
+	"context"
+	"github.com/GMISWE/app/internal/models"
+)
+
+type Create{{.Caption}}Req struct {
+
+}
+
+func ({{.Lower}}Service *{{.Lower}}Service) Create{{.Caption}}(ctx context.Context, req *CreateCouponReq) *resp.Error {
+    // logic...
+    return nil
+}
+
+type List{{.Capital}}req struct{
+
+}
+
+type *List{{.Capital}}Resp struct{
+
+}
+
+func ({{.Lower}}Service *{{.Lower}}Service) List{{.Capital}}(ctx context.Context, req *List{{.Capital}}req) (*List{{.Capital}}Resp, *resp.Error) {
+      // logic...
+     return nil ,nil
+}
