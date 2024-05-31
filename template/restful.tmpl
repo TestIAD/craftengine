@@ -2,12 +2,13 @@
 package restful
 
 import (
+	"github.com/gin-gonic/gin"
 
 	"github.com/GMISWE/app/internal/service"
 	"github.com/GMISWE/app/internal/service/{{.Lower}}"
 )
 
-// {{.Capital}} {{.Lower}}. {{.Test.Name}}
+// {{.Capital}} {{.Lower}}.
 type {{.Capital}} struct {
 	{{.Lower}} {{.Lower}}.Service
 }
@@ -17,4 +18,71 @@ func New{{.Capital}}(services *service.Services) *{{.Capital}} {
 	return &{{.Capital}}{
 		{{.Lower}}: services.{{.Capital}}Service,
 	}
+}
+// Create{{.Capital}} godoc
+// @Summary create {{.Lower}}
+// @Description  create {{.Lower}}
+// @Tags {{.Lower}}
+// @ID create_{{.Lower}}
+// @Accept json
+// @Produce json
+// @Param body body {{.Lower}}.Create{{.Capital}}Req true "req"
+// @Success 200 {object} swaggerresp.CommonResp "successful response"
+// @Router /api/v1/{{.Snake}}/coupon [post]
+func ({{.Lower}} *{{.Capital}}) Create{{.Capital}}(c *gin.Context) {
+    // logic ....
+    return
+}
+
+// Update{{.Capital}} godoc
+// @Summary update {{.Lower}}
+// @Description  update {{.Lower}}
+// @Tags {{.Lower}}
+// @ID update_{{.Lower}}
+// @Accept json
+// @Produce json
+// @Param body body {{.Lower}}.Update{{.Capital}}Req true "req"
+// @Success 200 {object} swaggerresp.CommonResp "successful response"
+// @Router /api/v1/{{.Lower}}/coupon/:id [put]
+func ({{.Lower}} *{{.Capital}}) Update{{.Capital}}(c *gin.Context) {
+    // logic ....
+   return
+}
+
+
+// Delete{{.Capital}} godoc
+// @Summary delete {{.Lower}}
+// @Description  delete {{.Lower}}
+// @Tags {{.Lower}}
+// @ID delete_{{.Lower}}
+// @Accept json
+// @Produce json
+// @Param body body {{.Lower}}.Delete{{.Capital}}Req true "req"
+// @Success 200 {object} swaggerresp.CommonResp "successful response"
+// @Router /api/v1/{{.Lower}}/coupon/:id [delete]
+func ({{.Lower}} *{{.Capital}}) Delete{{.Capital}}(c *gin.Context) {
+    // logic ....
+   return
+}
+
+
+// Get{{.Capital}} godoc
+// @Summary get {{.Lower}}
+// @Description  get {{.Lower}}
+// @Tags {{.Lower}}
+// @ID delete_{{.Lower}}
+// @Accept json
+// @Produce json
+// @Param body body {{.Lower}}.Delete{{.Capital}}Req true "req"
+// @Success 200 {object} swaggerresp.CommonResp "successful response"
+// @Router /api/v1/{{.Lower}}/coupon/:id [delete]
+func ({{.Lower}} *{{.Capital}}) Get{{.Capital}}(c *gin.Context) {
+    // logic ....
+   return
+}
+
+
+func ({{.Lower}} *{{.Capital}}) List{{.Capital}}(c *gin.Context) {
+    // logic ....
+   return
 }

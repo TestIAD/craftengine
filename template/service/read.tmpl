@@ -2,27 +2,21 @@ package {{.Lower}}
 
 import (
 	"context"
-	"github.com/GMISWE/app/internal/models"
+
+	"github.com/GMISWE/app/pkg/misc/tailormade/resp"
 )
 
-type Create{{.Caption}}Req struct {
+
+
+type Get{{.Capital}}Req struct{
 
 }
 
-func ({{.Lower}}Service *{{.Lower}}Service) Create{{.Caption}}(ctx context.Context, req *CreateCouponReq) *resp.Error {
-    // logic...
-    return nil
-}
-
-type List{{.Capital}}req struct{
+type Get{{.Capital}}Resp struct{
 
 }
 
-type *List{{.Capital}}Resp struct{
-
-}
-
-func ({{.Lower}}Service *{{.Lower}}Service) List{{.Capital}}(ctx context.Context, req *List{{.Capital}}req) (*List{{.Capital}}Resp, *resp.Error) {
+func ({{.Lower}}Service *{{.Lower}}Service) Get{{.Capital}}(ctx context.Context, req *Get{{.Capital}}Req) (*Get{{.Capital}}Resp, *resp.Error) {
       // logic...
      return nil ,nil
 }

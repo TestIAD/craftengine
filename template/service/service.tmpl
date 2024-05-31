@@ -11,7 +11,7 @@ import (
 
 type Service interface {
 	Create{{.Capital}}(ctx context.Context, req *Create{{.Capital}}Req) *resp.Error
-	List{{.Capital}}(ctx context.Context, req *List{{.Capital}}req) (*List{{.Capital}}Resp, *resp.Error)
+	Get{{.Capital}}(ctx context.Context, req *Get{{.Capital}}Req) (*Get{{.Capital}}Resp, *resp.Error)
 	Delete{{.Capital}}(ctx context.Context, req *Delete{{.Capital}}Req) *resp.Error
 	Update{{.Capital}}(ctx context.Context, req *Update{{.Capital}}Req) *resp.Error
 }

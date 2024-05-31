@@ -2,6 +2,35 @@ package {{.Lower}}
 
 import (
 	"context"
-	"github.com/GMISWE/app/internal/models"
+
+	"github.com/GMISWE/app/pkg/misc/tailormade/resp"
 )
 
+type Update{{.Capital}}Req struct {
+
+}
+
+func ({{.Lower}}Service *{{.Lower}}Service) Update{{.Capital}}(ctx context.Context, req *Update{{.Capital}}Req) *resp.Error {
+    // logic...
+    return nil
+}
+
+
+type Create{{.Capital}}Req struct {
+
+}
+
+func ({{.Lower}}Service *{{.Lower}}Service) Create{{.Capital}}(ctx context.Context, req *Create{{.Capital}}Req) *resp.Error {
+    // logic...
+    return nil
+}
+
+
+type Delete{{.Capital}}Req struct {
+
+}
+
+func ({{.Lower}}Service *{{.Lower}}Service) Delete{{.Capital}}(ctx context.Context, req *Delete{{.Capital}}Req) *resp.Error {
+    // logic...
+    return nil
+}
