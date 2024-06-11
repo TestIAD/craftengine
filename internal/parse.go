@@ -72,6 +72,7 @@ type Service struct {
 
 // Parse generates code files based on provided templates
 func Parse(module, service, srcPath string) {
+	setService(service, srcPath)
 	fileName := fmt.Sprintf("%s.go", camelToSnake(service))
 	services := Service{
 		Lower:   pascalToCamel(service),
@@ -83,6 +84,7 @@ func Parse(module, service, srcPath string) {
 	err := os.MkdirAll(path, 0755)
 	if err != nil {
 		log.Print(err)
+		os.Exit(-1)
 	} else {
 		log.Printf("Nested folders created: %s", path)
 	}
@@ -115,14 +117,14 @@ func Parse(module, service, srcPath string) {
 	}
 }
 
-func SetService(service, srcPath string) {
+func setService(service, srcPath string) {
 	newFieldName := service + "Service"
 	newFieldType := strings.ToLower(service) + ".Service"
 
 	filename := srcPath + "/internal/service/service.go"
 	src, err := os.ReadFile(filename)
 	if err != nil {
-		panic(err)
+		os.Exit(-1)
 	}
 
 	fset := token.NewFileSet()
@@ -158,6 +160,8 @@ func SetService(service, srcPath string) {
 	}
 	err = os.WriteFile(filename, buf.Bytes(), 0644)
 	if err != nil {
-		panic(err)
+		log.Printf("add servcie struct err")
+		os.Exit(-1)
 	}
+	log.Printf("success mkdir content success %s", filename)
 }

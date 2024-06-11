@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"craftengine/internal"
 	"fmt"
 	"os"
 
@@ -16,29 +17,26 @@ var (
 func init() {
 	rootCMD.Flags().StringVarP(
 		&module, "module", "m", "console",
-		"module",
+		"module for console or admin",
 	)
 	rootCMD.Flags().StringVarP(
 		&service, "service", "s", "",
-		"service",
+		"what service with a upper camel case",
 	)
 	rootCMD.Flags().StringVarP(
 		&path, "path", "p", "",
-		"path",
+		"app path",
 	)
 }
 
 var (
 	rootCMD = &cobra.Command{
-		Use:   "use",
-		Short: "Hugo is a very fast static site generator",
+		Use:   "craft",
+		Short: "craft is a very fast static site generator",
 		Long: `A Fast and Flexible Static Site Generator built with
-                love by spf13 and friends in Go.
-                Complete documentation is available at https://gohugo.io`,
+                love by spf13 and friends in Go.`,
 		Run: func(cmd *cobra.Command, args []string) {
-			fmt.Println("run hugo...")
-			fmt.Printf("%s\n", module)
-			fmt.Printf("%s\n", service)
+			internal.Parse(module, service, path)
 		},
 	}
 )
