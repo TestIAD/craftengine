@@ -1,7 +1,7 @@
 package main
 
 import (
-	"craftengine/cmd"
+	"github.com/TestIAD/craftengine/cmd"
 )
 
 func main() {
