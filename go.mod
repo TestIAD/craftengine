@@ -1,4 +1,4 @@
-module craftengine
+module github.com/TestIAD/craftengine
 
 go 1.21.4
 
