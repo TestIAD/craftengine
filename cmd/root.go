@@ -1,10 +1,10 @@
 package cmd
 
 import (
-	"craftengine/internal"
 	"fmt"
 	"os"
 
+	"github.com/TestIAD/craftengine/internal"
 	"github.com/spf13/cobra"
 )
 
